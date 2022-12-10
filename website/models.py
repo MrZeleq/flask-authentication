@@ -7,4 +7,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     name = db.Column(db.String(150))
+    ip = db.Column(db.String(150))
+    failed_login_attempts = db.Column(db.Integer)
+    failed_login_time = db.Column(db.DateTime)
+
 

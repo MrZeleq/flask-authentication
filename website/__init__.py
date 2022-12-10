@@ -5,15 +5,14 @@ from flask_login import LoginManager
 import urllib
 
 db = SQLAlchemy()
-DB_NAME = "saloon"
+DB_NAME = "flask_auth"
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
 
-   
-    params = urllib.parse.quote_plus('DRIVER={SQL Server};SERVER=DESKTOP-6S76ELA;DATABASE=saloon;Trusted_Connection=yes;')
+    params = urllib.parse.quote_plus('DRIVER={SQL Server};SERVER=DESKTOP-6S76ELA;DATABASE=flask_auth;Trusted_Connection=yes;')
     app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
     
     #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
@@ -31,7 +30,6 @@ def create_app():
     with app.app_context():
         if not path.exists('website/' + DB_NAME):
             db.create_all()
-            print('Created Database!')
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
