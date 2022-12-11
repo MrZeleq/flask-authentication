@@ -11,7 +11,34 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <title>{% block title %}Home{% endblock %}</title>
+    <style>
+      .title {
+          margin: 5px;
+      }
+
+      .content {
+          margin: 5px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
+
+      .user {
+          flex: 20%;
+          padding: 10px;
+          margin: 5px;
+          background-color: #f3f3f3;
+          inline-size: 100%;
+      }
+
+      
+      .name a {
+          color: #00a36f;
+          text-decoration: none;
+      }
+
+  </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,7 +46,21 @@
             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>  
           </div>
       </nav>
-    
+      {% block content %}
+      <h1 class="title">{% block title %} Users {% endblock %}</h1>
+      <div class="content">
+          {% for user in users %}
+              <div class="user">
+                  <p><b>#{{ user.id }}</b></p>
+                  <b>
+                      <p class="name">{{ user.name }}</p>
+                  </b>
+                  <p>{{ user.email }}</p>
+                  <p>{{ user.ip }}</p>
+              </div>
+          {% endfor %}
+      </div>
+  {% endblock %}
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
