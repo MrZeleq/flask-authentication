@@ -1,2 +1,2 @@
-# cool-saloon
- A web application that is a small business management system.
+# Flask-authentication
+ Project for authentication site made in flask.
