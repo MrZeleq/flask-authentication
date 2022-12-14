@@ -10,5 +10,6 @@ class User(db.Model, UserMixin):
     ip = db.Column(db.String(150))
     failed_login_attempts = db.Column(db.Integer)
     failed_login_time = db.Column(db.DateTime)
+    remind_code = db.Column(db.String(6))
 
 

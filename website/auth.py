@@ -5,6 +5,7 @@ from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 from datetime import datetime
 from sqlalchemy import func, text
+from flask_mail import Message
 
 date = datetime.now()
 auth = Blueprint('auth', __name__)
@@ -74,6 +75,10 @@ def login():
             flash('Email does not exist.', category='error')
 
     return render_template("login.html", user=current_user)
+
+@auth.route('/remindPassword_check', methods=['GET', 'POST'])
+def remindPasswordCheck():
+    return render_template("password_remind_check.html")
 
 
 @auth.route('/logout')
