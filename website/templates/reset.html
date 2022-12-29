@@ -18,23 +18,22 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
-          <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+          <a class="nav-item nav-link" id="signUp" href="/sign_up">Sign Up</a>
         </div>
     </nav>
     <form method="POST">
       <h3 align="center">Reset your password</h3>
       <div class="form-group">
-        <label for="email">Enter the pass code.</label>
+        <label for="email">Enter your user account's verified email address to obtain a password reset code.</label>
         <input
           type="email"
           class="form-control"
           id="email"
           name="email"
-          placeholder="Enter the pass code."
+          placeholder="Enter your email address"
         />
-      </div>
       <br />
-      <button type="submit" class="btn btn-primary">Change password</button>
+      <button type="submit" class="btn btn-primary">Send</button>
       
     </form>
     {% with messages = get_flashed_messages(with_categories=true) %} {% if

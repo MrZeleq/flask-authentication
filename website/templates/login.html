@@ -18,11 +18,21 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
-          <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+          <a class="nav-item nav-link" id="signUp" href="/sign_up">Sign Up</a>
         </div>
     </nav>
     <form method="POST">
       <h3 align="center">Login</h3>
+      <div class="form-group">
+        <label for="name">Enter name</label>
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter name"
+        />
+      </div>
       <div class="form-group">
         <label for="email">Email Address</label>
         <input
@@ -48,7 +58,7 @@
       
     </form>
     <br />
-    <a id="remindPassword" href="/remindPassword">Forgot password?</a>
+    <a id="remindPassword" href="/password_reset">Forgot password?</a>
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
       messages %} {% for category, message in messages %} {% if category ==
       'error' %}

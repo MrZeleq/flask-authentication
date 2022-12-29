@@ -47,9 +47,8 @@
           </div>
       </nav>
       {% block content %}
-      <h1 class="title">{% block title %} Users {% endblock %}</h1>
+      <h1 class="title">{% block title %} User {% endblock %}</h1>
       <div class="content">
-          {% for user in users %}
               <div class="user">
                   <p><b>#{{ user.id }}</b></p>
                   <b>
@@ -58,7 +57,31 @@
                   <p>{{ user.email }}</p>
                   <p>{{ user.ip }}</p>
               </div>
-          {% endfor %}
+      </div>
+      <h1 class="title">{% block title_actions %} Actions {% endblock %}</h1>
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th>action_id</th>
+              <th>user_id</th>
+              <th>action_name</th>
+              <th>action_date</th>
+              <th>status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for action in actions_list %}
+              <tr>
+                <td>{{action[0]}}</td>
+                <td>{{action[1]}}</td>
+                <td>{{action[2]}}</td>
+                <td>{{action[3]}}</td>
+                <td>{{action[4]}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>       
       </div>
   {% endblock %}
 
