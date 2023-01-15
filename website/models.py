@@ -170,7 +170,7 @@ class User(db.Model, flask_login.UserMixin):
                     flask_login.login_user(user, remember=True)
                     return True
             elif current_password == "expired":
-                flash('The password expires after 10 minutes. Please change your password.', category='error')
+                flash('The password expires after 20 minutes. Please change your password.', category='error')
                 Actions.create_action('login', 'Failure', user.id)
                 return user
             else:
