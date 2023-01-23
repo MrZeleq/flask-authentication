@@ -14,20 +14,20 @@ The project aims to build a login/registration page that, in addition to basic f
 ## Account rules
 The example account rules are divided into two groups possibly to be used.
 1. password rules, under which you should:
-a) Enable the Password rule must meet the complexity requirements.
-b) Specify the maximum password validity period, i.e. the number of days after which it
-b) Specify the maximum period of validity of the password, i.e. the number of days after which it must be changed; passwords should be changed at least every three months.
+* Enable the Password rule must meet the complexity requirements.
+* Specify the maximum password validity period, i.e. the number of days after which it
+* Specify the maximum period of validity of the password, i.e. the number of days after which it must be changed; passwords should be changed at least every three months.
 at least every three months.
-c) Set a minimum, even one-day password validity period; in this way
+* Set a minimum, even one-day password validity period; in this way
 prevent users from quickly changing their password so many times,
 so that they can use the previous one back.
-d) Enforce a long password history of up to 20 entries.
+* Enforce a long password history of up to 20 entries.
 - this rule in combination with the previous one will force users to actually
 changing passwords.
 2. account lockout rules, which should:
-a) Specify at least a period of several minutes for which the account will be
+* Specify at least a period of several minutes for which the account will be
 automatically blocked.
-b) Set a high account lockout threshold; the risk that a submitted password will be
+* Set a high account lockout threshold; the risk that a submitted password will be
 guessed in five and fifteen attempts is practically the same.
 - setting the lockout threshold too low will only make your job more difficult.
 
