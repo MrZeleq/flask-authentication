@@ -6,10 +6,10 @@ The project aims to build a login/registration page that, in addition to basic f
 * user registration
 * password reset using e-mail and JWT authentication
 * logging in with appropriate rules and logging out of the system
-* user login without assigning to a user group (optional user groups can be added) 
- * counting the number of incorrect logins and blocking logins for a certain period of time,
- * logging of the last n passwords so that you cannot repeat any of them.
- * logging in and out of the system.
+* user login without assigning to a user group
+* counting the number of incorrect logins and blocking logins for a certain period of time,
+* logging of the last n passwords so that you cannot repeat any of them.
+* logging in and out of the system.
 
 ## Account rules
 The example account rules are divided into two groups possibly to be used.
